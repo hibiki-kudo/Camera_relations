@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CameraApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCS-Zf-H32">
+                                <rect key="frame" x="157" y="587" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="7sO-xm-6VG"/>
+                                    <constraint firstAttribute="height" constant="60" id="pEa-gD-9M5"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cameraButton:" destination="PwL-nC-VmD" eventType="touchUpInside" id="GKb-FX-jpI"/>
+                                    <action selector="cameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kdo-zf-Ncy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="NCS-Zf-H32" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1g2-MM-RBR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NCS-Zf-H32" secondAttribute="bottom" constant="20" id="jyD-jv-DhM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="GUW-nf-TGT" kind="presentation" identifier="next" id="aSY-1v-ucV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="PwL-nC-VmD" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="27"/>
+        </scene>
+        <!--Pre View Controller-->
+        <scene sceneID="jZv-K4-vS2">
+            <objects>
+                <viewController id="GUW-nf-TGT" customClass="PreViewController" customModule="CameraApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nre-as-CWm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jIK-xd-GAx">
+                                <rect key="frame" x="0.0" y="58" width="375" height="609"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPp-Io-oJ1">
+                                <rect key="frame" x="329" y="20" width="31" height="30"/>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="SaveImage:" destination="GUW-nf-TGT" eventType="touchUpInside" id="DVQ-Z9-Vb0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFR-Hz-RdD">
+                                <rect key="frame" x="15" y="20" width="77" height="30"/>
+                                <state key="normal" title="キャンセル"/>
+                                <connections>
+                                    <action selector="Cancel:" destination="GUW-nf-TGT" eventType="touchUpInside" id="ITV-Pc-Zqx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WJx-17-xJN" firstAttribute="trailing" secondItem="wPp-Io-oJ1" secondAttribute="trailing" constant="15" id="Iss-WB-aw8"/>
+                            <constraint firstItem="jIK-xd-GAx" firstAttribute="bottom" secondItem="WJx-17-xJN" secondAttribute="bottom" id="NEK-86-2f8"/>
+                            <constraint firstItem="LFR-Hz-RdD" firstAttribute="top" secondItem="WJx-17-xJN" secondAttribute="top" id="WNR-QW-kR1"/>
+                            <constraint firstItem="jIK-xd-GAx" firstAttribute="top" secondItem="LFR-Hz-RdD" secondAttribute="bottom" constant="8" id="dgZ-C4-5Ea"/>
+                            <constraint firstItem="jIK-xd-GAx" firstAttribute="leading" secondItem="WJx-17-xJN" secondAttribute="leading" id="kAg-ix-Sta"/>
+                            <constraint firstItem="LFR-Hz-RdD" firstAttribute="leading" secondItem="WJx-17-xJN" secondAttribute="leading" constant="15" id="p1T-JY-hIg"/>
+                            <constraint firstItem="wPp-Io-oJ1" firstAttribute="top" secondItem="WJx-17-xJN" secondAttribute="top" id="psI-o6-CEs"/>
+                            <constraint firstItem="jIK-xd-GAx" firstAttribute="trailing" secondItem="WJx-17-xJN" secondAttribute="trailing" id="vgZ-zg-E4h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WJx-17-xJN"/>
+                    </view>
+                    <connections>
+                        <outlet property="ImageView" destination="jIK-xd-GAx" id="EKn-ld-GIQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nvG-Iz-jHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="27"/>
+        </scene>
+    </scenes>
+</document>
